@@ -1,0 +1,26 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <h1>Create new Todo</h1>
+
+    <div
+        class="form-control"
+        [ngClass]="{invalid: form.get('value').touched && form.get('value').invalid}"
+    >
+        <label for="value">Title</label>
+        <input type="text" id="value" formControlName="value">
+        <div
+            class="validation"
+            *ngIf="form.get('value').touched && form.get('value').invalid"
+        >
+            <small *ngIf="form.get('value').errors.required">
+                Enter title name
+            </small>
+        </div>
+    </div>
+
+    <button
+        type="submit"
+        class="btn btn-block btn-dark"
+        [disabled]="form.invalid"
+    >Create To Do</button>
+
+</form>

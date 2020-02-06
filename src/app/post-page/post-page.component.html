@@ -1,0 +1,14 @@
+<div *ngIf="post | async as post; else loading">
+<div class="post">
+  <div class="header">
+    <h1>{{post.value}}</h1>
+    <button routerLink="/" class="btn btn-link">На главную</button>
+  </div>
+  <div>
+      <p>More: {{post.value}}...More: {{post.value}}...More: {{post.value}}...More: {{post.value}}...More: {{post.value}}...More: {{post.value}}...</p>
+  </div>
+</div>
+</div>
+<ng-template #loading>
+  <p class="text-center">Loading...</p>
+</ng-template>

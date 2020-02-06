@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-header">
+    <h2>{{post.value}}</h2>
+
+    <small>ID: {{post._id}}</small>
+  </div>
+
+  <button
+    [routerLink]="['/post', post._id]"
+    class="btn btn-dark"
+  >Открыть</button>
+</div>
